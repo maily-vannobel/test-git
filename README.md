@@ -35,6 +35,7 @@ php-symfony-essentials/
 ├── composer.json
 ├── composer.lock
 ├── vendor/ (ignoré par Git)
+├── .env
 ```
 ### Création des fichiers de base
 Pour démarrer une application Symfony, nous avons besoin de deux fichiers essentiels :
@@ -48,7 +49,17 @@ Pour démarrer une application Symfony, nous avons besoin de deux fichiers essen
 4. Transmet la requête au Kernel pour traitement et génère une réponse.
 5. Envoie cette réponse au client et termine le cycle de requête.
 
-Dans un projet créé automatiquement (ex. `symfony/skeleton`), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Cependant, il peut être modifié pour :
-- Passer en mode production en changeant l'environnement et le mode debug.
-- Personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes.
+Dans un projet créé automatiquement (ex. `symfony/skeleton`), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Iil peut être modifié pour passer en mode prod ou personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes.
+
+- **`.env `** :
+  
+    ```bash
+    APP_ENV=dev
+    APP_DEBUG=1
+    APP_SECRET=your-secret-key
+    ```
+    ```bash
+    php -r "echo bin2hex(random_bytes(16));"
+    ```
+       
 ---
