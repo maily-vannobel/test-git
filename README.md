@@ -35,5 +35,4 @@ Doctrine est un outil puissant qui permet de :
 
 
 ---
-Si tout fonctionne correctemment, cette page apparait : 
-![image](https://github.com/user-attachments/assets/5e80704e-9c1e-4cf9-995e-df0299c1164e)
+
