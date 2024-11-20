@@ -12,10 +12,17 @@ Doctrine est un outil puissant qui permet de :
   ```bash
    composer require symfony/orm-pack
   ```
+
+Installe également MakerBundle, qui permet de générer des entités et d'autres fichiers automatiquement :
+ ```bash
+   composer require --dev symfony/maker-bundle
+  ```
+
+
  ##### Lier La BDD MySQL à Doctrine
-  
+  La configuration de la BDD se fait dans  `.env` 
    ```bash
-      -
+      
    ``` 
 ---
 ### Commandes utiles
