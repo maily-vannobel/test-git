@@ -1,27 +1,26 @@
-## Étape 2.2 : Configuration ⚙️
+## Étape 3 : Base de données 💻
 
-### Création des fichiers de configuration
+### Installer Doctrine
+Doctrine est un outil puissant qui permet de :
 
-- **`config/bundles.php`** : Le noyau de l’application ; il est utilisé pour enregistrer et activer les **bundles** et initialise l’application.
-  Pour l'app Symfony par exemple ↓
-- **`config/packages/framework.yaml`** :  Pour configurer le comportement global du Framework Symfony
+<ul>
+<li>Mapper des objets PHP aux tables de la base de données (ORM)</li>
+<li>Générer automatiquement des tables à partir de classes (Entités)</li>
+<li>Manipuler les données de la base avec une approche orientée objet (Entity Manager).</li>
+</ul>
 
-### Installation des composants essentiels
- #### Composant DebugBundle
- Ajoute des outils de débogage pour l’environnement de développement.
   ```bash
-   composer require symfony/debug-bundle --dev
+   composer require symfony/orm-pack
   ```
- ##### Composant YAML
-  Les options de chaque bundle sont définies dans des fichiers YAML dans le dossier `config/packages/`. Il faut d'abord installer le composant : 
+ ##### Lier La BDD MySQL à Doctrine
+  
    ```bash
-  composer require symfony/yaml
+      -
    ``` 
 ---
-### Test de la configuration & commandes utiles
+### Commandes utiles
 
   #### Regénèrer l’autoload
-  L'autoload permet de charger automatiquement les classes nécessaires. À chaque installation ou modifification de composant, il faut régénerer l'autoload pour que Symfony reconaisse les nouvelles classes.
    ```bash
     composer dump-autoload
   ```
@@ -32,7 +31,6 @@
  ```
 
 #### Lien de l'application 
-
 À cette adresse : [http://localhost:8000](http://localhost:8000)
 
 
