@@ -1,4 +1,4 @@
-## Étape 3 : Base de données 💻
+![header](https://capsule-render.vercel.app/api?type=soft&color=gradient&height=150&section=header&text=Étape%203%20:%20Base%20de%20données%20💻&fontSize=40)
 
 ### Installer Doctrine
 Doctrine est un outil puissant qui permet de :
