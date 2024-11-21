@@ -9,17 +9,20 @@ Doctrine est un outil puissant qui permet de :
 <li>Manipuler les données de la base avec une approche orientée objet (Entity Manager).</li>
 </ul>
 
+Pour installer **Doctrine** et ses dépendances : 
   ```bash
-   composer require symfony/orm-pack
+    composer require symfony/orm-pack
   ```
 
-Installe également MakerBundle, qui permet de générer des entités et d'autres fichiers automatiquement :
+Il faut aussi installer **MakerBundle** (qui servira plus tard), qui permet de générer des entités et d'autres fichiers automatiquement :
  ```bash
    composer require --dev symfony/maker-bundle
   ```
+💡Penser à régénerer l'autoload !
 
+---
 
- ##### Lier La BDD MySQL à Doctrine
+### Lier La BDD MySQL à Doctrine
   La configuration de la BDD se fait dans  `.env` 
    ```bash
       
