@@ -5,24 +5,46 @@ Avant de commencer, il  faut installer les composants de base nécessaires pour 
 ### Commande d'installation
 Pour installer Symfony, dans un terminal du projet :
 
-```bash
-composer require symfony/framework-bundle
-```
+  ```bash
+  composer require symfony/framework-bundle
+  ```
+
+  #### Différence entre `framework-bundle` et `symfony/skeleton`
+
+  Cette commande installe `uniquement le cœur de Symfony, sans structure imposée, l'architecture, les fichiers et leur contenu doivent être faits à la main.
+  À l'inverse, la commande `Skeletton crée un projet complet avec une structure prédéfinie et des dépendances initiales, ajoute parfois des fichiers ou des bundles pas nécessaires. 
+
+    ```bash
+    composer require symfony/skeleton
+
+    ```
 ---
-### Différence entre `framework-bundle` et `symfony/skeleton`
 
-Cette commande installe `uniquement le cœur de Symfony`, sans structure imposée, l'architecture et les fichiers doivent être faits à la main.
-À l'inverse, la commande `composer create-project symfony/skeleton` crée un projet complet avec une structure prédéfinie et des dépendances initiales. ajoute parfois des fichiers ou des bundles pas nécessaires. 
+### Configuration de l'autoload
+Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier `composer.json` pour que Symfony puisse détecter correctement les classes de l'application (comme `Kernel`).
 
-
-
-```bash
-{
+A ce stade, `composer.json` doit ressembler à ça : 
+    ```bash
+        {
     "require": {
         "symfony/framework-bundle": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
     }
 }
-```
+
+    ```
+
+    Ensuite regénérer l'autoload pour que Synfony puisse charger les changements.
+    ```bash
+    composer dump-autoload
+
+    ``` 
+
+
 ---
 ## Étape 2 : Création de l'architecture et des fichiers 🗂️
 ### Structure de dossiers 
@@ -34,11 +56,11 @@ php-symfony-essentials/
 │   └── index.php
 ├── config/
 │   └── packages
-        │──
 ├── composer.json
 ├── composer.lock
 ├── vendor/ (ignoré par Git)
 ├── .env
+├── .gitignore
 ```
 ### Création des fichiers de base
 Pour démarrer une application Symfony, nous avons besoin de deux fichiers essentiels :
