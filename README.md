@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/40887311-c96b-444a-aba0-bfd2c0c43f62)![header](https://capsule-render.vercel.app/api?type=soft&color=0:CDEFFB,100:F0FBFF&height=100&section=header&text=Étape%203%20:%20Base%20de%20données%20💻&fontSize=30&fontColor=002B5B)
+![header](https://capsule-render.vercel.app/api?type=soft&color=0:CDEFFB,100:F0FBFF&height=100&section=header&text=Étape%203%20:%20Base%20de%20données%20💻&fontSize=30&fontColor=002B5B)
 
 ### 📥 Installer Doctrine
 Doctrine est un outil puissant qui permet de :
