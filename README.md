@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=0:CDEFFB,100:F0FBFF&height=100&section=header&text=Étape%203%20:%20Base%20de%20données%20💻&fontSize=30&fontColor=002B5B)
+![image](https://github.com/user-attachments/assets/40887311-c96b-444a-aba0-bfd2c0c43f62)![header](https://capsule-render.vercel.app/api?type=soft&color=0:CDEFFB,100:F0FBFF&height=100&section=header&text=Étape%203%20:%20Base%20de%20données%20💻&fontSize=30&fontColor=002B5B)
 
 ### 📥 Installer Doctrine
 Doctrine est un outil puissant qui permet de :
@@ -69,6 +69,9 @@ Pour tester que Doctrine peut bien  se connecter :
  ```bash
    php bin/console doctrine:database:validate
  ```
+💡 Si aucune entité n’a encore été créée, la commande retournera une erreur indiquant que le schéma de la base n’est pas synchronisé avec les fichiers de mapping, c'est normal, les entités seront crées dans l'étape suivante. 
+
+## Étape 3.2 :
 
 
 
