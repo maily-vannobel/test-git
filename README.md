@@ -82,11 +82,11 @@ Pour tester que Doctrine peut bien  se connecter :
    ```bash
     composer dump-autoload
   ```
- #### Lancer le serveur 
+ #### Lancer le serveur
  
- ```bash
-   php -S localhost:8000 -t public
- ```
+   ```bash
+     php -S localhost:8000 -t public
+   ```
 
 #### Lien de l'application 
 À cette adresse : [http://localhost:8000](http://localhost:8000)

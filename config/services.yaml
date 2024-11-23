@@ -1,0 +1,12 @@
+parameters:
+    locale: 'en'
+
+services:
+    # Découverte automatique des classes dans src/
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Tests,Kernel.php}'
+    
+    App\Service\MyService:
+        arguments:
+            $apiKey: '%env(API_KEY)%'
