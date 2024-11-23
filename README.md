@@ -1,4 +1,5 @@
-## Étape 2.2 : Configuration ⚙️
+![header](https://capsule-render.vercel.app/api?type=soft&color=0:FF8000,100:FFD580&height=100&section=header&text=Étape%202%20:%20Configuration%20⚙️&fontSize=30&fontColor=5B3D00)
+
 
 ### Création des fichiers de configuration
 
