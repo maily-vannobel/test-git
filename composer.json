@@ -1,6 +1,7 @@
 {
     "require": {
         "symfony/framework-bundle": "^7.1",
+        "symfony/dotenv": "^7.1",
         "symfony/yaml": "^7.1"
     },
     "autoload": {
