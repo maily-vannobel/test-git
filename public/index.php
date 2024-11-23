@@ -16,8 +16,7 @@ $request = Request::createFromGlobals();
 // Traite la requête via le Kernel. Symfony utilise ses composants pour générer une réponse appropriée.
 $response = $kernel->handle($request);
 
-// Envoie la réponse générée au client (navigateur).
-$response->send();
+$response->send(); // Envoie la réponse générée au client (navigateur).
 
 // Termine le cycle de vie de la requête après l'envoi de la réponse (utilisé pour des tâches comme les logs).
 $kernel->terminate($request, $response);

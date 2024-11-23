@@ -21,7 +21,7 @@ class Kernel extends BaseKernel
         return \dirname(__DIR__);
     }
 
-    // Définit le répertoire de cache utilisé par Symfony. Par défaut, il est stocké dans `var/cache/{environnement}`.
+    // Définit le répertoire de cache utilisé par Symfony. Par défaut, stocké dans `var/cache/{environnement}`.
     public function getCacheDir(): string
     {
         return $this->getProjectDir() . '/var/cache/' . $this->environment;
