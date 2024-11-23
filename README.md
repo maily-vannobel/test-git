@@ -5,7 +5,7 @@
 
 Avant de commencer, il  faut installer les composants de base nécessaires pour construire une application Symfony. (Composer,vWamp..)
 
-### Commande d'installation
+### Étape 1.1 : Commande d'installation
 Pour installer Symfony, dans un terminal du projet :
 
   ```bash
@@ -25,14 +25,14 @@ Il existe une version plus légère avec moins de dossiers crées automatiquemen
    composer require symfony/skeleton
   ```
 
-### Installation des composants essentiels
+### Étape 1.2 : Installation des composants essentiels
 - Dotenv : Charge les variables définies dans .env pour que Symfony puisse les utiliser
     ```bash
    composer require symfony/dotenv
   ```
 
-### Configuration de l'autoload
-Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier `composer.json` pour que Symfony puisse détecter correctement les classes de l'application (comme `Kernel`).
+### Étape 1.3 : Configuration de l'autoload
+Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier `composer.json` pour que Symfony puisse détecter correctement les classes de l'application (comme `Kernel`). Il faut manuellement rajouter cette partie dans le json.
 
 À ce stade, `composer.json` doit ressembler à ça : 
 
@@ -50,11 +50,7 @@ Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier 
 }
 ```
 
-Ensuite regénérer l'autoload pour que Synfony puisse charger les changements.
-    
-  ```bash
-  composer dump-autoload
- ``` 
+Ensuite faire un `composer install` pour installer les dépendances puis regénérer l'autoload avec `composer dump-autoload` pour que Synfony puisse charger les changements.
 
 ---
 ## Étape 2 : Création de l'architecture et des fichiers 🗂️
@@ -88,16 +84,16 @@ Pour démarrer une application Symfony, nous avons besoin de deux fichiers essen
 charge les variables d'environnement de `.env`.
   
 - **`public/index.php`** : Le point d’entrée de l’application, qui reçoit toutes les requêtes HTTP.
-  Il charge les classes et dépendances nécessaires via Composer (`vendor/autoload.php`).  Initialise le noyau (Kernel) avec l'environnement actif (comme `dev` ou `prod`) et un mode debug. Crée une requête HTTP en 
-  utilisant les données du client (navigateur).Transmet la requête au Kernel pour traitement et génère une réponse. puis l'envoie au client et termine le cycle de requête.
- Dans un projet créé automatiquement (skeletton), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Il peut être modifié pour passer en mode prod ou personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes.
+      <p> Il charge les classes et dépendances nécessaires via Composer (`vendor/autoload.php`).  Initialise le noyau (Kernel) avec l'environnement actif (comme `dev` ou 
+        `prod`) et un mode debug. <br>
+          Crée une requête HTTP en utilisant les données du client (navigateur).Transmet la requête au Kernel pour traitement et génère une réponse. puis l'envoie au client             et termine le cycle de requête. <br>
+         Dans un projet créé automatiquement (skeletton), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Il peut être modifié pour passer             en mode prod ou personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes. </p>
 
 - **`config/services.yaml`** : Configure les services et dépendances.
   
 - **`bin/console`** :permet d'exécuter des commandes Symfony pour interagir avec l'application.
 
 - **`.env `** :
-  
     ```bash
     APP_ENV=dev
     APP_DEBUG=1
@@ -109,4 +105,28 @@ charge les variables d'environnement de `.env`.
     php -r "echo bin2hex(random_bytes(16));"
     ```
        
+---
+### Commandes utiles
+
+  ##### Regénèrer l’autoload
+   ```bash
+    composer dump-autoload
+  ```
+ ##### Installer les dépendances
+   ```bash
+    composer install
+  ```
+ ##### Mettre à jour
+   ```bash
+     composer update
+   ```
+ ##### Nettoyer le cache
+   ```bash
+     php bin/console cache:clear
+   ```
+ ##### Lancer le serveur
+   ```bash
+     php -S localhost:8000 -t public
+   ```
+
 ---
