@@ -1,4 +1,7 @@
-## Étape 1 : Installation de Symfony avec Composer🔨
+![header](https://capsule-render.vercel.app/api?type=soft&color=0:FFF9C4,100:FFE082&height=100&section=header&text=Étape%201%20:%20Installation%20🔨&fontSize=30&fontColor=6D4C41)
+
+
+## Installer Symfony et ses composants avec Composer
 
 Avant de commencer, il  faut installer les composants de base nécessaires pour construire une application Symfony. (Composer,vWamp..)
 
@@ -9,16 +12,24 @@ Pour installer Symfony, dans un terminal du projet :
   composer require symfony/framework-bundle
   ```
 
-  #### Différence entre `framework-bundle` et `symfony/skeleton`
+  #### Différence entre `framework-bundle`, `symfony/skeleton` et `symfony/website-skeleton`
 
 `framework-bundle` installe `uniquement le cœur de Symfony`, sans structure imposée, l'architecture, les fichiers et leur contenu doivent être faits à la main.
 À l'inverse, `symfony/skeleton` crée un projet complet avec une structure prédéfinie et des dépendances initiales, ajoute parfois des fichiers ou des bundles pas nécessaires. Pour l'installer :
 
   ```bash
+   composer require symfony/website-skeleton
+  ```
+Il existe une version plus légère avec moins de dossiers crées automatiquement : 
+  ```bash
    composer require symfony/skeleton
   ```
 
----
+### Installation des composants essentiels
+- Dotenv : Charge les variables définies dans .env pour que Symfony puisse les utiliser
+    ```bash
+   composer require symfony/dotenv
+  ```
 
 ### Configuration de l'autoload
 Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier `composer.json` pour que Symfony puisse détecter correctement les classes de l'application (comme `Kernel`).
@@ -28,7 +39,8 @@ Une fois Symfony installé, il faut configurer l'autoload PSR-4 dans le fichier 
 ```json
 {
     "require": {
-        "symfony/framework-bundle": "^7.1"
+        "symfony/framework-bundle": "^7.1",
+        "symfony/dotenv": "^7.1"
     },
     "autoload": {
         "psr-4": {
@@ -55,10 +67,15 @@ php-symfony-essentials/
 ├── public/
 │   └── index.php
 ├── config/
-│   └── packages
+│   ├── bundles.php
+│   ├── packages/
+│   ├── services.yaml       
+├── bin/
+│   └── console
+├── var/  
 ├── composer.json
 ├── composer.lock
-├── vendor/ (ignoré par Git)
+├── vendor/ 
 ├── .env
 ├── .gitignore
 ```
@@ -67,12 +84,17 @@ php-symfony-essentials/
 
 ### Création des fichiers de base
 Pour démarrer une application Symfony, nous avons besoin de deux fichiers essentiels :
-- **`src/Kernel.php`** : Le noyau de l’application qui configure les bundles et initialise l’application.
+- **`src/Kernel.php`** : Le noyau de l’application qui charge les bundles et initialise l’application. Il configure les répertoires du projet, du cache, et des logs et 
+charge les variables d'environnement de `.env`.
   
 - **`public/index.php`** : Le point d’entrée de l’application, qui reçoit toutes les requêtes HTTP.
   Il charge les classes et dépendances nécessaires via Composer (`vendor/autoload.php`).  Initialise le noyau (Kernel) avec l'environnement actif (comme `dev` ou `prod`) et un mode debug. Crée une requête HTTP en 
   utilisant les données du client (navigateur).Transmet la requête au Kernel pour traitement et génère une réponse. puis l'envoie au client et termine le cycle de requête.
  Dans un projet créé automatiquement (skeletton), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Il peut être modifié pour passer en mode prod ou personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes.
+
+- **`config/services.yaml`** : Configure les services et dépendances.
+  
+- **`bin/console`** :permet d'exécuter des commandes Symfony pour interagir avec l'application.
 
 - **`.env `** :
   
