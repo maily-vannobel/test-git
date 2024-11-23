@@ -1,0 +1,22 @@
+<?php
+
+use App\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+set_time_limit(0);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$input = new ArgvInput();
+$env = $input->getParameterOption(['--env', '-e'], $_SERVER['APP_ENV'] ?? 'dev', true);
+$debug = filter_var($_SERVER['APP_DEBUG'] ?? ('prod' !== $env), FILTER_VALIDATE_BOOLEAN);
+
+$_SERVER['APP_ENV'] = $env;
+$_SERVER['APP_DEBUG'] = $debug;
+$_ENV['APP_ENV'] = $env;
+$_ENV['APP_DEBUG'] = $debug;
+
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+$application = new Application($kernel);
+$application->run();
