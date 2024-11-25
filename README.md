@@ -3,7 +3,7 @@
 
 ## Installer Symfony et ses composants avec Composer
 
-Avant de commencer, il  faut installer les composants de base nécessaires pour construire une application Symfony. (Composer,vWamp..)
+Avant de commencer, il faut installer les composants de base nécessaires pour construire une application Symfony. (Composer,Wamp..)
 
 ### Étape 1.1 : Commande d'installation
 Pour installer Symfony, dans un terminal du projet :
@@ -89,7 +89,7 @@ charge les variables d'environnement de `.env`.
           Crée une requête HTTP en utilisant les données du client (navigateur).Transmet la requête au Kernel pour traitement et génère une réponse. puis l'envoie au client             et termine le cycle de requête. <br>
          Dans un projet créé automatiquement (skeletton), ce fichier est généré par Symfony et fonctionne tel quel dans la plupart des cas. Il peut être modifié pour passer             en mode prod ou personnaliser certains comportements si le projet nécessite une gestion avancée des requêtes. </p>
 
-- **`config/services.yaml`** : Configure les services et dépendances.
+- **`config/services.yaml`** : Configure les services et dépendances. Le fichier services.yaml ne fait qu'enregistrer des services, mais il ne crée pas automatiquement les classes, pour chaque service ajouté il faut créer une classe.
   
 - **`bin/console`** :permet d'exécuter des commandes Symfony pour interagir avec l'application.
 
