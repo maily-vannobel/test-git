@@ -109,10 +109,12 @@ charge les variables d'environnement de `.env`.
 ### Commandes utiles
 
   ##### Regénèrer l’autoload
+   Met à jour uniquement le fichier d'autoload (dans `vendor/`) sans toucher aux dépendances. Utile si des classes ou fichiers sont ajoutés manuellement
    ```bash
     composer dump-autoload
   ```
  ##### Installer les dépendances
+   A faire quand on arrive sur une nouvelle branche, installe les dépendance (contient aussi dump-autoload)
    ```bash
     composer install
   ```
