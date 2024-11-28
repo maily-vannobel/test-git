@@ -108,7 +108,7 @@ charge les variables d'environnement de `.env`.
 ---
 ### Commandes utiles
 
-  ##### Regénèrer l’autoload
+  ##### Regénèrer l’autoload :  Pour que Symfony puisse charger les nouvelles classes et dépendances.
    Met à jour uniquement le fichier d'autoload (dans `vendor/`) sans toucher aux dépendances. Utile si des classes ou fichiers sont ajoutés manuellement
    ```bash
     composer dump-autoload
@@ -122,7 +122,7 @@ charge les variables d'environnement de `.env`.
    ```bash
      composer update
    ```
- ##### Nettoyer le cache
+ ##### Nettoyer le cache : S'assure que Symfony actualise toutes les configurations.
    ```bash
      php bin/console cache:clear
    ```
